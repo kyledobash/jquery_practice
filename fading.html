@@ -8,25 +8,32 @@
 
     $("document").ready(function(){
 
-       $(".textCopy").hover(highlightCopy);
+        $("#fade-in").on("click", function() {
+            $("#textBox").fadeIn(3000, function() {
+                alert("i'm done fading in");
+            });
+        });
 
-       function highlightCopy() {
-        $(this).toggleClass("highlight")
-       }
+        $("#fade-out").on("click", function() {
+            $("#textBox").fadeOut("fast", function() {
+                alert("i'm done fading out");
+            });
+        });
     });
 
 
     </script>
 
     <style>
-        .highlight {
-            background-color: black;
+        #textBox {
+            display: none;
         }
     </style>
 
     </head>
     
 <body>
+    <a href="#" id="fade-in">Fade in</a> | <a href="#" id="fade-out">Fade out</a>
 
     <div id="textBox">
 
