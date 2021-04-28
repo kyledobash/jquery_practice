@@ -8,22 +8,32 @@
 
     $("document").ready(function(){
 
-        
+        $("#slide-up").click(function() {
+            $("#textBox").slideUp("2000", "linear");
+        });
+
+        $("#slide-down").click(function() {
+            $("#textBox").slideDown("2000", "linear");
+        });
+
+        $("#toggleSlide").click(function() {
+            $("#textBox").slideToggle("2000", function() {
+                alert("Done");
+            });
+        });
     });
 
 
     </script>
 
     <style>
-        #textBox {
-            display: none;
-        }
+
     </style>
 
     </head>
     
 <body>
-    <a href="#" id="fade-in">Fade in</a> | <a href="#" id="fade-out">Fade out</a>
+    <a href="#" id="slide-up">Slide up</a> | <a href="#" id="slide-down">Slide down</a> | <a href="#" id="toggleSlide">Toggle</a>
 
     <div id="textBox">
 
